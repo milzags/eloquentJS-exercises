@@ -22,10 +22,9 @@ function somethingLikeAFoorLoop(value, testFunction, updateFunction, bodyFunctio
     if (testFunction(value) === false) return;
 
     bodyFunction(value); 
-    bodyFunction() {
-        return somethingLikeAFoorLoop(updateFunction(value), testFunction, updateFunction, bodyFunction);
+    updateFunction(
+        somethingLikeAFoorLoop(updateFunction(value), testFunction, updateFunction, bodyFunction));
     };
-};
 
 // everything
 //every method returns true when the given function returns true for every element
